@@ -2,10 +2,10 @@ library(shiny)
 library(DT)
 rm(list = ls())
 
-Ddes <- read.csv("/Users/FCORVAGL/Desktop/data/R Shiny/Ddes.csv")
-D15 <- read.csv("/Users/FCORVAGL/Desktop/data/R Shiny/Data15.csv")
+Ddes <- read.csv("Ddes.csv")
+D15 <- read.csv("Data15.csv")
+D14 <- read.csv("Data14.csv")
 
-D14 <- read.csv("/Users/FCORVAGL/Desktop/data/R Shiny/Data14.csv")
 #Legends
 names(Ddes)[3] <- "Parameter Value"
 DdesEmp <- rbind(Ddes[1:3,], Ddes[grep("Emp",Ddes$Field),])
