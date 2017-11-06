@@ -1,0 +1,36 @@
+library(shiny)
+library(DT)
+rm(list = ls())
+
+Ddes <- read.csv("/Users/FCORVAGL/Desktop/data/R Shiny/Ddes.csv")
+D15 <- read.csv("/Users/FCORVAGL/Desktop/data/R Shiny/Data15.csv")
+
+D14 <- read.csv("/Users/FCORVAGL/Desktop/data/R Shiny/Data14.csv")
+#Legends
+names(Ddes)[3] <- "Parameter Value"
+DdesEmp <- rbind(Ddes[1:3,], Ddes[grep("Emp",Ddes$Field),])
+DdesPS <- rbind(Ddes[1:3,], Ddes[grep("PS",Ddes$Field),])
+DdesSS <- rbind(Ddes[1:3,], Ddes[grep("SS",Ddes$Field),])
+DdesFE <- rbind(Ddes[1:3,], Ddes[grep("FE",Ddes$Field),])
+DdesGP <- rbind(Ddes[1:3,], Ddes[grep("GP",Ddes$Field),])
+DdesH <- rbind(Ddes[1:3,], Ddes[grep("Hosp",Ddes$Field),])
+DdesF <- rbind(Ddes[1:3,], Ddes[grep("Food",Ddes$Field),])
+DdesT <- rbind(Ddes[1:3,], Ddes[grep("Town",Ddes$Field),])
+#2015
+D15Emp <- cbind(D15[, 1:3], D15[, grep("Emp", colnames(D15))])
+D15PS <- cbind(D15[, 1:3], D15[, grep("PS", colnames(D15))])
+D15SS <- cbind(D15[, 1:3], D15[, grep("SS", colnames(D15))])
+D15FE <- cbind(D15[, 1:3], D15[, grep("FE", colnames(D15))])
+D15GP <- cbind(D15[, 1:3], D15[, grep("GP", colnames(D15))])
+D15H <- cbind(D15[, 1:3], D15[, grep("Hosp", colnames(D15))])
+D15F <- cbind(D15[, 1:3], D15[, grep("Food", colnames(D15))])
+D15T <- cbind(D15[, 1:3], D15[, grep("Town", colnames(D15))])
+#2014
+D14Emp <- cbind(D14[, 1:3], D14[, grep("Emp", colnames(D14))])
+D14PS <- cbind(D14[, 1:3], D14[, grep("PS", colnames(D14))]) 
+D14SS <- cbind(D14[, 1:3], D14[, grep("SS", colnames(D14))])
+D14FE <- cbind(D14[, 1:3], D14[, grep("FE", colnames(D14))])
+D14GP <- cbind(D14[, 1:3], D14[, grep("GP", colnames(D14))])
+D14H <- cbind(D14[, 1:3], D14[, grep("Hosp", colnames(D14))])
+D14F <- cbind(D14[, 1:3], D14[, grep("Food", colnames(D14))])
+D14T <- cbind(D14[, 1:3], D14[, grep("Town", colnames(D14))])
