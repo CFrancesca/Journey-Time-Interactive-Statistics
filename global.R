@@ -1,3 +1,5 @@
+#Author: Francesca Corvaglia
+
 library(shiny)
 library(DT)
 rm(list = ls())
