@@ -1,3 +1,5 @@
+#Author: Francesca Corvaglia
+
 ui <- fluidPage(
   titlePanel("Journey times to key services by local authority"),
   sidebarLayout(
