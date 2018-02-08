@@ -1,3 +1,5 @@
+#Author: Francesca Corvaglia
+
 server <- function(input, output) {
   
   # choose columns to display
