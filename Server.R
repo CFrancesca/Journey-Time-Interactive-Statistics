@@ -1,9 +1,37 @@
-#Author: Francesca Corvaglia
-
 server <- function(input, output) {
   
   # choose columns to display
   output$mytable1 <- DT::renderDataTable({ 
+    if (input$show_tab =="Employment Centre") 
+    {DT::datatable(D16Emp[, input$show_varsEmp, drop = FALSE], options = list(pageLength = 100), rownames= FALSE)
+    }
+    else if (input$show_tab =="Primary School")
+    {DT::datatable(D16PS[, input$show_varsPS, drop = FALSE], options = list(pageLength = 100), rownames= FALSE)
+    }
+    else if (input$show_tab =="Secondary School")
+    {DT::datatable(D16SS[, input$show_varsSS, drop = FALSE], options = list(pageLength = 100), rownames= FALSE)
+    }
+    else if (input$show_tab =="Further Education")
+    {DT::datatable(D16FE[, input$show_varsFE, drop = FALSE], options = list(pageLength = 100), rownames= FALSE)
+    }
+    else if (input$show_tab =="GP Doctor")
+    {DT::datatable(D16GP[, input$show_varsGP, drop = FALSE], options = list(pageLength = 100), rownames= FALSE)
+    }
+    else if (input$show_tab =="Hospital")
+    {DT::datatable(D16H[, input$show_varsH, drop = FALSE], options = list(pageLength = 100), rownames= FALSE)
+    }
+    else if (input$show_tab =="Food Store")
+    {DT::datatable(D16F[, input$show_varsF, drop = FALSE], options = list(pageLength = 100), rownames= FALSE)
+    }
+    else if (input$show_tab =="Town Center")
+    {DT::datatable(D16T[, input$show_varsT, drop = FALSE], options = list(pageLength = 100), rownames= FALSE)
+    }
+    else {message("A table is missing")
+    }
+  })
+  
+  # choose columns to display
+  output$mytable2 <- DT::renderDataTable({ 
     if (input$show_tab =="Employment Centre") 
     {DT::datatable(D15Emp[, input$show_varsEmp, drop = FALSE], options = list(pageLength = 100), rownames= FALSE)
     }
@@ -33,7 +61,7 @@ server <- function(input, output) {
   })
   
   # sorted columns are colored now because CSS are attached to them
-  output$mytable2 <- DT::renderDataTable({
+  output$mytable3 <- DT::renderDataTable({
     if (input$show_tab =="Employment Centre") 
     {DT::datatable(D14Emp[, input$show_varsEmp, drop = FALSE], options = list(pageLength = 100), rownames= FALSE)
     }
@@ -64,7 +92,7 @@ server <- function(input, output) {
   
   
   # Legend
-  output$mytable3 <- DT::renderDataTable({
+  output$mytable4 <- DT::renderDataTable({
     if (input$show_tab =="Employment Centre")  {
       DT::datatable(DdesEmp, options = list(lengthMenu = c(5, 50, 30), pageLength = 50), 
                     rownames= FALSE)

@@ -1,15 +1,13 @@
-#Author: Francesca Corvaglia
-
 library(shiny)
 library(DT)
 rm(list = ls())
 
-setwd("xxx/R Shiny")
+setwd("G:/AFP/RLTDAll/STS/001 ACCESSIBILITY/001 DATA COLLECTION/0001 Accessibility Statistics/2016/data/R Shiny")
 
-Ddes <- read.csv(xxx/R Shiny/Ddes.csv")
-Data16 <- read.csv("xxx/R Shiny/D16.csv")
-Data15 <- read.csv("xxx/R Shiny/D15.csv")
-Data14 <- read.csv("xxx/R Shiny/D14.csv")
+Ddes <- read.csv("G:/AFP/RLTDAll/STS/001 ACCESSIBILITY/001 DATA COLLECTION/0001 Accessibility Statistics/2016/data/R Shiny/Ddes.csv")
+Data16 <- read.csv("G:/AFP/RLTDAll/STS/001 ACCESSIBILITY/001 DATA COLLECTION/0001 Accessibility Statistics/2016/data/R Shiny/D16.csv")
+Data15 <- read.csv("G:/AFP/RLTDAll/STS/001 ACCESSIBILITY/001 DATA COLLECTION/0001 Accessibility Statistics/2016/data/R Shiny/D15.csv")
+Data14 <- read.csv("G:/AFP/RLTDAll/STS/001 ACCESSIBILITY/001 DATA COLLECTION/0001 Accessibility Statistics/2016/data/R Shiny/D14.csv")
 #Legends
 names(Ddes)[3] <- "Parameter Value"
 DdesEmp <- rbind(Ddes[1:3,], Ddes[grep("Emp",Ddes$Field),])
@@ -47,3 +45,4 @@ D14GP <- cbind(Data14[, 1:3], Data14[, grep("GP", colnames(Data14))])
 D14H <- cbind(Data14[, 1:3], Data14[, grep("Hosp", colnames(Data14))])
 D14F <- cbind(Data14[, 1:3], Data14[, grep("Food", colnames(Data14))])
 D14T <- cbind(Data14[, 1:3], Data14[, grep("Town", colnames(Data14))])
+
